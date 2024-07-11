@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Buckshot Roulette</title>
 </head>
-
 <body>
-
     <div id="game">
-
-        <div id="player-2" class="player">Player 2: <span id="player-2-health"></span></div>
-
-        <div @mouseover="open = true" @mouseover.outside="open = false" x-data="{ open: false }" id="shotgun-wrapper">
-            <button class="action-button" x-show="open" x-transition onclick="shoot('opponent')" id="shoot-opponent">OPPONENT</button>
-            <img :style="{ scale: open ? 1.1 : '' }" id="shotgun" src="images/shotgun.png" alt="A picture of a shotgun">
-            <button class="action-button" x-show="open" x-transition onclick="shoot('self')" id="shoot-self">YOU</button>
+        <div id="status"></div>
+        <div id="instructions"></div>
+        <div id="turn-indicator"></div>
+        <div id="player-1">
+            <div id="player-1-health"></div>
+            <div id="player-1-items"></div>
         </div>
-
-        <div id="player-1" class="player">Player 1: <span id="player-1-health"></span></div>
-
+        <div id="player-2">
+            <div id="player-2-health"></div>
+            <div id="player-2-items"></div>
+        </div>
+        <div id="shotgun"></div>
+        <button id="shoot-opponent">Shoot Opponent</button>
+        <button id="shoot-self">Shoot Self</button>
+        <button id="use-item">Use Item</button>
     </div>
 
     <script src="game.js"></script>
 </body>
-
 </html>
